@@ -1,3 +1,14 @@
 <%# views/moon/index.ejs %>
 
 <h1>Moon Stuff</h1>
+
+<% moon.forEach(moon => {
+  <div class="moon">
+    <h4>
+      <a href="<%= `/moon/${moon.id}` %>">
+        <%=moon.date %>
+      </a>
+    </h4>
+  <p><%=moon.imageUrl</p>
+</div>
+<% }) %>
