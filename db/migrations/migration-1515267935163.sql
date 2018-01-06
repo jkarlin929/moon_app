@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS moonPhase (
+  id BIGSERIAL PRIMARY KEY,
+  date VARCHAR(255),
+  imageUrl VARCHAR(255)
+)
