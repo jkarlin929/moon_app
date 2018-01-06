@@ -4,7 +4,4 @@ const moonRouter = express.Router();
 
 moonRouter.get('/', moonController.index);
 
-
-
-
 module.exports = moonRouter;
