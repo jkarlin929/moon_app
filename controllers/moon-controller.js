@@ -17,8 +17,8 @@ moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
     res.render('moon/show', {
-      moon : moon
-    })
+      moon: moon
+    });
   })
   .catch(err => {
     res.status(400).json(err);
@@ -28,7 +28,7 @@ moonController.show = (req, res) => {
 moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
-      res.render('edit', {
+      res.render('moon/edit', {
         moon: moon,
       })
     })
@@ -39,7 +39,7 @@ moonController.edit = (req, res) => {
 
 moonController.update = (req, res) => {
   Moon.update({
-      date: req.body.date,
+      date: req.body.date
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)
