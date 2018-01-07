@@ -6,3 +6,7 @@
 
 <a href="/moon">Back to index page</a>
 <a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
+
+<form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
+  <input type="submit" value="Delete" />
+</form>
