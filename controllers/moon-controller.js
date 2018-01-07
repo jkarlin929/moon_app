@@ -72,5 +72,15 @@ moonController.create = (req, res) => {
   });
 };
 
+moonController.destroy = (req, res) => {
+  Moon.destroy(req.params.id)
+  .then(() => {
+    res.redirect('/moon')
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+}
+
 
 module.exports = moonController;
