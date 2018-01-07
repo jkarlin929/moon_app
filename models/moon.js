@@ -32,5 +32,14 @@ Moon.create = movie => {
     );
 };
 
+Moon.destroy = id =>{
+  return db.none(
+    `
+    DELETE FROM moon
+    WHERE id = $1
+    `,
+    [id]
+  );
+};
 
 module.exports = Moon;
