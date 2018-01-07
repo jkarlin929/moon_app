@@ -29,7 +29,8 @@ moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
       res.render('moon/edit', {
-        moon: moon
+        moon: moon,
+        imageurl : imageurl
       })
     })
     .catch(err => {
