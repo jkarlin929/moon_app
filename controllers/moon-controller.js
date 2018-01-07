@@ -37,4 +37,17 @@ moonController.edit = (req, res) => {
     });
 };
 
+moonController.update = (req, res) => {
+  Moon.update({
+      date: req.body.date,
+      imageurl: req.body.imageurl
+    }, req.params.id)
+    .then(() => {
+      res.redirect(`/moon/${req.params.id}`)
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
 module.exports = moonController;
