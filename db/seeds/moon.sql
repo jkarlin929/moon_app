@@ -1,3 +1,5 @@
+/c moon_phase
+
 INSERT INTO moonPhase (date, imageUrl) VALUES
 (
   '09/29/1986',
@@ -6,4 +8,4 @@ INSERT INTO moonPhase (date, imageUrl) VALUES
 (
   '06/11/1990',
   'https://www.donutbar.com/wp-content/uploads/2017/05/donut-bar-homers.png'
-)
+);

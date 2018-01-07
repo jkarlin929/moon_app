@@ -29,7 +29,7 @@ moonController.show = (req, res) => {
 moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
-      res.render('moon/edit', {
+      res.render('edit', {
         moon: moon,
       })
     })
@@ -67,6 +67,7 @@ moonController.create = (req, res) => {
   .then(moon => {
     res.redirect(`/moon/${moon.id}`)
   })
+  console.log
   .catch(err => {
     res.status(400).json(err);
   });
