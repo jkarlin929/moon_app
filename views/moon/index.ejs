@@ -1,6 +1,6 @@
 <%# views/moon/index.ejs %>
 
-<h1>Moon Stuff</h1>
+<h1>Welcome</h1>
 
 <% moon.forEach(moon => { %>
   <div class="moon">
@@ -9,9 +9,8 @@
         <%=moon.date %>
       </a>
     </h4>
-
-<a href="<%=moon.imageUrl %>">Click Here</a>
-
-
+  <p>
+  <%=moon.imageurl %>
+  </p>
 </div>
 <% }) %>
