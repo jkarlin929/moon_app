@@ -51,4 +51,21 @@ moonController.update = (req, res) => {
     });
 };
 
+moonController.new = (req, res) => {
+  res.render('/moon/new')
+};
+
+moonController.create = (req, res) => {
+  Moon.create({
+    date: req.body.date
+  })
+  .then(moon => {
+    res.redirect(`/moon/${moon.id}`)
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+};
+
+
 module.exports = moonController;
