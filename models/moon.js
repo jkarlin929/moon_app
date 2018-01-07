@@ -19,6 +19,7 @@ Moon.update = (moon, id) => {
       `,
       [moon.date, moon.imageurl, id]
     );
+};
 
 
 module.exports = Moon;
