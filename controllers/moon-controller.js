@@ -25,4 +25,16 @@ moonController.show = (req, res) => {
   });
 };
 
+moonController.edit = (req, res) => {
+  Moon.findById(req.params.id)
+    .then(moon => {
+      res.render('moon/edit', {
+        moon: moon
+      })
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
 module.exports = moonController;
