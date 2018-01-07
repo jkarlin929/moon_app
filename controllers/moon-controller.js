@@ -6,7 +6,7 @@ moonController.index = (req, res) => {
   Moon.findAll()
   .then(moon => {
     res.render('moon/index',
-      {moon: moon}); console.log(moon.id)
+      {moon: moon});
   })
   .catch(err => {
     res.status(400).json(err);
@@ -29,7 +29,7 @@ moonController.show = (req, res) => {
 moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
-      res.render('edit', {
+      res.render('moon/edit', {
         moon: moon,
       })
     })
@@ -53,7 +53,7 @@ moonController.update = (req, res) => {
 moonController.new = (req, res) => {
   Moon.findAll()
   .then(moon => {
-    res.render('new', {moon: moon})
+    res.render('moon/new', {moon: moon})
   })
   .catch(err => {
     res.status(400).json(err)
