@@ -19,6 +19,7 @@ moonController.show = (req, res) => {
     res.render('moon/show', {
       moon: moon
     });
+    console.log(moon.date)
   })
   .catch(err => {
     res.status(400).json(err);
@@ -50,7 +51,13 @@ moonController.update = (req, res) => {
 };
 
 moonController.new = (req, res) => {
-  res.render('/moon/new')
+  Moon.findAll()
+  .then(moon => {
+    res.render('new', {moon: moon})
+  })
+  .catch(err => {
+    res.status(400).json(err)
+  })
 };
 
 moonController.create = (req, res) => {
