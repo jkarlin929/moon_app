@@ -21,5 +21,16 @@ Moon.update = (moon, id) => {
     );
 };
 
+Moon.create = movie => {
+  return db.one(
+    `
+    INSERT INTO moonPhase
+    (date)
+    VALUES ($1) RETURNING *
+    `,
+    [moon.date]
+    );
+};
+
 
 module.exports = Moon;
