@@ -16,6 +16,7 @@ Moon.update = (moon, id) => {
       date = $1,
       imageurl = $2
       WHERE id = $3
+      RETURNING *
       `,
       [moon.date, moon.imageurl, id]
     );
