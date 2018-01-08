@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const moonRouter = require('./routes/moon-routes');
 
+require('dotenv').config()
 
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
