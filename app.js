@@ -7,12 +7,14 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const moonRouter = require('./routes/moon-routes');
 
-app.use('/moon', moonRouter);
+
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+app.use('/moon', moonRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello Friend');

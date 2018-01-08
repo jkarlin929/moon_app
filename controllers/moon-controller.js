@@ -61,13 +61,16 @@ moonController.new = (req, res) => {
 };
 
 moonController.create = (req, res) => {
+  // console.log('check for create');
+  console.log("inside create: ", req.body)
   Moon.create({
     date: req.body.date
   })
   .then(moon => {
-    res.redirect(`/moon/${moon.id}`)
+    res.redirect(`moon/${moon.id}`)
   })
   .catch(err => {
+    console.log("bad shit happened")
     res.status(400).json(err);
   });
 };

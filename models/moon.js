@@ -15,18 +15,19 @@ Moon.update = (moon, id) => {
   return db.none(
       `
       UPDATE moonphase SET
-      date = $1
+      moon_date = $1
       WHERE id = $2
       `,
       [moon.date, id]
     );
 };
 
-Moon.create = movie => {
+Moon.create = moon => {
+  console.log("this is Moon.create: ", moon.date)
   return db.one(
     `
     INSERT INTO moonphase
-    (date)
+    (moon_date)
     VALUES ($1) RETURNING *
     `,
     [moon.date]
