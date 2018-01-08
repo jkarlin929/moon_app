@@ -2,7 +2,7 @@
 (http://res.cloudinary.com/jkarlin929/image/upload/v1515444341/wireframe_project2.jpg)
 Wireframe for Project
 
-~[image of time matrix and E.R.D.]
+![image of time matrix and E.R.D.]
 (http://res.cloudinary.com/jkarlin929/image/upload/v1515444380/time_matrix_project2.jpg)
 Time Matrix for Project
 
