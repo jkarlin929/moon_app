@@ -1,5 +1,5 @@
 const Moon = require('../models/moon');
-
+const axios = require('axios');
 const moonController = {};
 
 moonController.index = (req, res) => {
@@ -10,6 +10,22 @@ moonController.index = (req, res) => {
   })
   .catch(err => {
     res.status(400).json(err);
+  });
+};
+
+moonController.search = (req, res) => {
+  axios({
+    method: 'get',
+    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=4:20`
+  })
+  .then((moon) => {
+    res.json({
+      status: 200,
+      message: 'moon stuff here',
+      moon: moon.moon_date
+    })
+  }).catch((err) => {
+    res.status(500).json(err)
   });
 };
 
