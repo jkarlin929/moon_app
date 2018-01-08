@@ -19,7 +19,7 @@ moonController.show = (req, res) => {
     res.render('moon/show', {
       moon: moon
     });
-    console.log(moon)
+    // console.log(moon)
   })
   .catch(err => {
     res.status(400).json(err);
@@ -57,7 +57,7 @@ moonController.new = (req, res) => {
   })
   .catch(err => {
     res.status(400).json(err)
-  })
+  });
 };
 
 moonController.create = (req, res) => {
@@ -67,7 +67,6 @@ moonController.create = (req, res) => {
   .then(moon => {
     res.redirect(`/moon/${moon.id}`)
   })
-  console.log
   .catch(err => {
     res.status(400).json(err);
   });
