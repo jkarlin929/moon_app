@@ -1,22 +1,26 @@
 <%# views/moon/index.ejs %>
 
 <h1>Welcome</h1>
+<h2>index.ejs</h2>
 
 <% moon.forEach(moon => { %>
   <div class="moon">
     <h4>
       <a href="<%= `/moon/${moon.id}` %>">
-        <%=moon.date %>
+        <%=moon.moon_date %>
       </a>
     </h4>
 
-<a href="<%=moon.imageUrl %>">Click Here</a>
-<a href="/moon/new">Add a Date!</a>
-</div>
+<p> <%=moon.imageurl %> </p>
+
 <% }) %>
+
+<a href='/moon/new'>Add a Date!</a>
+</div>
 
 <h1>search for date</h1>
 <form action="/moon/search" method="POST">
   <input type="text" name="date" />
   <input type="submit" value="Submit Date" />
 </form>
+
