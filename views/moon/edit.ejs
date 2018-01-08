@@ -3,7 +3,7 @@
 <h1>Edit a moon</h1>
 
 <form action="<%= `/moon/${moon.id}?_method=PUT` %>" method="POST">
-  <label for="date">Date</label>
+  <label for="date">Edit This Date</label>
   <input id="date" type="text" name="date" value=" <%= moon.date %>" />
 
   <br />
