@@ -16,13 +16,14 @@ moonController.index = (req, res) => {
 moonController.search = (req, res) => {
   axios({
     method: 'get',
-    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=4:20`
+    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
   })
   .then((moon) => {
+    console.log(moon)
     res.json({
       status: 200,
       message: 'moon stuff here',
-      moon: moon.moon_date
+      moon: moon.data
     })
   }).catch((err) => {
     res.status(500).json(err)
