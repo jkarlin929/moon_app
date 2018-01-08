@@ -8,6 +8,7 @@ moonRouter.get('/:id/edit', moonController.edit);
 moonRouter.put('/:id', moonController.update);
 moonRouter.get('/new', moonController.new);
 moonRouter.post('/', moonController.create);
+moonRouter.post('/search', moonController.search);
 moonRouter.delete('/:id', moonController.destroy);
 
 
