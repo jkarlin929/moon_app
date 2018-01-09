@@ -1,4 +1,5 @@
 <%# views/moon/show.ejs %>
+<%- include ../partials/editplate %>
 
 <h1>Show.ejs</h1>
 
@@ -9,6 +10,10 @@
 <a href="/moon">Back to index page</a>
 <a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
 
+<img src="http://api.usno.navy.mil/imagery/moon.png?date=5/28/1900&time=5:13"/>
+
 <form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
   <input type="submit" value="Delete" />
 </form>
+
+<%- include ../partials/end %>

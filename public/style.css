@@ -1,4 +1,30 @@
-h1 {
-  background: lightblue;
+body {
+  background-image: url("https://media.giphy.com/media/xT39DouSd9H24AgSEU/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
+h1 {
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+}
+
+h2 {
+  color: lightblue;
+  font-family: 'Faster One', cursive;
+}
+
+table, th, td {
+    border: 1.5px solid #FFD700;
+    border-collapse: collapse;
+}
+
+th, td {
+  color: #ba0f0f;
+  padding: 15px;
+}
+
+th {
+  text-align: left;
+}

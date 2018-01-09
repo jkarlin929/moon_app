@@ -1,19 +1,30 @@
 <%# views/moon/index.ejs %>
-<% include ./partials/boilerplate %>
-
+<%- include ../partials/boilerplate %>
+<p>index.ejs</p>
 <h1>Welcome</h1>
-<h2>index.ejs</h2>
 
 <% moon.forEach(moon => { %>
+<table>
   <div class="moon">
-    <h4>
-      <a href="<%= `/moon/${moon.id}` %>">
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="<%= `/moon/${moon.id}` %>">
         <%=moon.moon_date %>
-      </a>
-    </h4>
-    <p><%= moon.moon_time %></p>
+        </a>
+      </td>
+      <td>
+        <p><%= moon.moon_time %></p>
+      </td>
+    </tr>
+</table>
 
 <% }) %>
+
+<br />
 
 <a href='/moon/new'>Add a Time and Date!</a>
 </div>
@@ -24,4 +35,4 @@
   <input type="submit" value="Submit Date" />
 </form>
 
-<% include ./partials/end %>
+<%- include ../partials/end %>
