@@ -45,8 +45,7 @@ moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
       res.render('edit', {
-        moon: moon,
-        imageurl : imageurl
+        moon: moon
       })
     })
     .catch(err => {
@@ -57,7 +56,7 @@ moonController.edit = (req, res) => {
 moonController.update = (req, res) => {
   Moon.update({
       date: req.body.date,
-      imageurl: req.body.imageurl
+      time: req.body.time
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)
