@@ -1,4 +1,3 @@
-/c moon_phase
 
 INSERT INTO moonphase (moon_date, imageUrl, moon_time) VALUES
 (
