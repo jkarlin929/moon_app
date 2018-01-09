@@ -13,12 +13,12 @@ Moon.findById = id => {
 
 Moon.update = (moon, id) => {
   return db.none(
-      `
-      UPDATE moonphase SET
-      moon_date = $1
-      WHERE id = $2
+      `UPDATE moonPhase SET
+      date = $1,
+      time = $2
+      WHERE id = $3
       `,
-      [moon.date, id]
+      [moon.date, moon.time, id]
     );
 };
 
