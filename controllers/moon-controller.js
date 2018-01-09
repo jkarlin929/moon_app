@@ -80,7 +80,8 @@ moonController.new = (req, res) => {
 
 moonController.create = (req, res) => {
   Moon.create({
-    date: req.body.date
+    date: req.body.date,
+    time: req.body.time
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)
