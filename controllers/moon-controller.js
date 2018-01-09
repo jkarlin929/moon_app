@@ -35,7 +35,6 @@ moonController.show = (req, res) => {
   .then(moon => {
     res.render('moon/show', {
       moon: moon,
-      time: moon
     });
     // console.log(moon)
   })
