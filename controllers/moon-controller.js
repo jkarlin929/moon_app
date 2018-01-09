@@ -1,5 +1,5 @@
 const Moon = require('../models/moon');
-
+const axios = require('axios');
 const moonController = {};
 
 moonController.index = (req, res) => {
@@ -13,12 +13,29 @@ moonController.index = (req, res) => {
   });
 };
 
+moonController.search = (req, res) => {
+  axios({
+    method: 'get',
+    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=4:20`
+  })
+  .then((moon) => {
+    res.json({
+      status: 200,
+      message: 'moon stuff here',
+      moon: moon.moon_date
+    })
+  }).catch((err) => {
+    res.status(500).json(err)
+  });
+};
+
 moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
     res.render('moon/show', {
       moon: moon
     });
+    // console.log(moon)
   })
   .catch(err => {
     res.status(400).json(err);
@@ -50,20 +67,39 @@ moonController.update = (req, res) => {
 };
 
 moonController.new = (req, res) => {
-  res.render('/moon/new')
+  Moon.findAll()
+  .then(moon => {
+    res.render('moon/new', {moon: moon})
+  })
+  .catch(err => {
+    res.status(400).json(err)
+  });
 };
 
 moonController.create = (req, res) => {
+  // console.log('check for create');
+  console.log("inside create: ", req.body)
   Moon.create({
     date: req.body.date
   })
   .then(moon => {
-    res.redirect(`/moon/${moon.id}`)
+    res.redirect(`moon/${moon.id}`)
+  })
+  .catch(err => {
+    console.log("bad shit happened")
+    res.status(400).json(err);
+  });
+};
+
+moonController.destroy = (req, res) => {
+  Moon.destroy(req.params.id)
+  .then(() => {
+    res.redirect('/moon')
   })
   .catch(err => {
     res.status(400).json(err);
   });
-};
+}
 
 
 module.exports = moonController;

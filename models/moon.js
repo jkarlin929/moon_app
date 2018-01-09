@@ -3,23 +3,45 @@ const db = require('../db/config');
 const Moon = {};
 
 Moon.findAll = () => {
-  return db.query('SELECT * FROM moonPhase');
+  return db.query('SELECT * FROM moonphase');
 };
 
 Moon.findById = id => {
-  return db.query(`SELECT * FROM moonPhase WHERE id = $1`, [id]);
+  // console.log(db)
+  return db.oneOrNone(`SELECT * FROM moonphase WHERE id = $1`, [id]);
 };
 
 Moon.update = (moon, id) => {
   return db.none(
       `
-      UPDATE moonPhase SET
-      date = $1,
+      UPDATE moonphase SET
+      moon_date = $1
       WHERE id = $2
       `,
       [moon.date, id]
     );
 };
 
+Moon.create = moon => {
+  console.log("this is Moon.create: ", moon.date)
+  return db.one(
+    `
+    INSERT INTO moonphase
+    (moon_date)
+    VALUES ($1) RETURNING *
+    `,
+    [moon.date]
+    );
+};
+
+Moon.destroy = id =>{
+  return db.none(
+    `
+    DELETE FROM moonphase
+    WHERE id = $1
+    `,
+    [id]
+  );
+};
 
 module.exports = Moon;

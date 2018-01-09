@@ -1,5 +1,8 @@
-CREATE TABLE IF NOT EXISTS moonPhase (
+/c moon_phase
+DROP TABLE IF NOT EXISTS
+
+CREATE TABLE IF NOT EXISTS moonphase (
   id BIGSERIAL PRIMARY KEY,
-  date VARCHAR(255),
+  moon_date VARCHAR(255),
   imageUrl VARCHAR(255)
 )
