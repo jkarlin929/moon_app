@@ -3,11 +3,12 @@ const db = require('../db/config');
 const Moon = {};
 
 Moon.findAll = () => {
-  return db.query('SELECT * FROM moonPhase');
+  return db.query('SELECT * FROM moonphase');
 };
 
 Moon.findById = id => {
-  return db.query(`SELECT * FROM moonPhase WHERE id = $1`, [id]);
+  // console.log(db)
+  return db.oneOrNone(`SELECT * FROM moonphase WHERE id = $1`, [id]);
 };
 
 Moon.update = (moon, id) => {
@@ -21,11 +22,12 @@ Moon.update = (moon, id) => {
     );
 };
 
-Moon.create = movie => {
+Moon.create = moon => {
+  console.log("this is Moon.create: ", moon.date)
   return db.one(
     `
-    INSERT INTO moonPhase
-    (date)
+    INSERT INTO moonphase
+    (moon_date)
     VALUES ($1) RETURNING *
     `,
     [moon.date]
@@ -35,7 +37,7 @@ Moon.create = movie => {
 Moon.destroy = id =>{
   return db.none(
     `
-    DELETE FROM moon
+    DELETE FROM moonphase
     WHERE id = $1
     `,
     [id]

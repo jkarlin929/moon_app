@@ -1,9 +1,12 @@
-INSERT INTO moonPhase (date, imageUrl) VALUES
+
+INSERT INTO moonphase (moon_date, imageUrl, moon_time) VALUES
 (
   '09/29/1986',
-  'https://img.purch.com/h/1000/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAxOS8wOTEvb3JpZ2luYWwvanVseS1za3l3YXRjaGluZy1wb3J0bGFuZC5qcGc='
+  'https://img.purch.com/h/1000/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAxOS8wOTEvb3JpZ2luYWwvanVseS1za3l3YXRjaGluZy1wb3J0bGFuZC5qcGc=',
+  '8:17'
 ),
 (
   '06/11/1990',
-  'https://www.donutbar.com/wp-content/uploads/2017/05/donut-bar-homers.png'
-)
+  'https://www.donutbar.com/wp-content/uploads/2017/05/donut-bar-homers.png',
+  '12:30'
+);
