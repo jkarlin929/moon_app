@@ -16,13 +16,14 @@ moonController.index = (req, res) => {
 moonController.search = (req, res) => {
   axios({
     method: 'get',
-    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=4:20`
+    url: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
   })
   .then((moon) => {
+    console.log(moon)
     res.json({
       status: 200,
       message: 'moon stuff here',
-      moon: moon.moon_date
+      moon: moon.data
     })
   }).catch((err) => {
     res.status(500).json(err)
@@ -33,8 +34,9 @@ moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
     res.render('moon/show', {
-      moon : moon
-    })
+      moon: moon
+    });
+    // console.log(moon)
   })
   .catch(err => {
     res.status(400).json(err);
@@ -44,8 +46,8 @@ moonController.show = (req, res) => {
 moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
-      res.render('edit', {
-        moon: moon
+      res.render('moon/edit', {
+        moon: moon,
       })
     })
     .catch(err => {
@@ -67,7 +69,13 @@ moonController.update = (req, res) => {
 };
 
 moonController.new = (req, res) => {
-  res.render('/moon/new')
+  Moon.findAll()
+  .then(moon => {
+    res.render('moon/new', {moon: moon})
+  })
+  .catch(err => {
+    res.status(400).json(err)
+  });
 };
 
 moonController.create = (req, res) => {
@@ -75,7 +83,7 @@ moonController.create = (req, res) => {
     date: req.body.date
   })
   .then(moon => {
-    res.redirect(`/moon/${moon.id}`)
+    res.redirect(`moon/${moon.id}`)
   })
   .catch(err => {
     res.status(400).json(err);
