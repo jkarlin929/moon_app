@@ -54,7 +54,7 @@ moonController.edit = (req, res) => {
       res.status(400).json(err);
     });
 };
-
+//part of .edit
 moonController.update = (req, res) => {
   Moon.update({
       date: req.body.date,
@@ -67,7 +67,7 @@ moonController.update = (req, res) => {
       res.status(400).json(err);
     });
 };
-
+//part of .create
 moonController.new = (req, res) => {
   Moon.findAll()
   .then(moon => {
