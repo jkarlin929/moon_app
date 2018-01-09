@@ -1,0 +1,14 @@
+<%# views/moon/show.ejs %>
+
+<h1>Show.ejs</h1>
+
+<h1><%= moon.moon_date %></h1>
+<h1><%= moon.moon_time %></h1>
+<img src="<%= moon.imageurl %>">
+
+<a href="/moon">Back to index page</a>
+<a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
+
+<form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
+  <input type="submit" value="Delete" />
+</form>

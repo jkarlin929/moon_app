@@ -1,0 +1,20 @@
+<%# views/moon/new %>
+
+<h1>Create a Date</h1>
+<h2>new.ejs</h2>
+
+<form action="/moon" method="POST">
+  <label for="date">Date</label>
+  <input id="date" type="text" name="date" />
+
+  <br />
+
+  <label for="time">Time</label>
+  <input id="time" type="text" name="time" />
+
+  <br />
+
+  <input type="submit" name="Create the Date!" />
+</form>
+
+<a href="/moon">Cancel</a>

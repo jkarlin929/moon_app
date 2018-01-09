@@ -1,0 +1,20 @@
+<%# views/moon/edit.ejs %>
+
+<h1>Edit a moon</h1>
+<h2>edit.ejs</h2>
+
+<form action="<%= `/moon/${moon.id}?_method=PUT` %>" method="POST">
+  <label for="date">Edit This Date</label>
+  <input id="date" type="text" name="date" value=" <%= moon.moon_date %>" />
+
+  <br />
+
+  <label for="time">Edit the Time</label>
+  <input id="time" type="text" name="time" value="<%= moon.moon_time %>"/>
+
+  <br />
+
+  <input type="submit" value="Save changes" />
+</form>
+
+<a href="<%= `/moon/${moon.id}` %>">Cancel</a>
