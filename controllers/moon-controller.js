@@ -34,7 +34,7 @@ moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
     res.render('moon/show', {
-      moon: moon,
+      moon: moon
     });
     // console.log(moon)
   })
