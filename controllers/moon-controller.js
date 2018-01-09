@@ -6,7 +6,8 @@ moonController.index = (req, res) => {
   Moon.findAll()
   .then(moon => {
     res.render('moon/index',
-      {moon: moon});
+      {moon: moon,
+        time: time});
   })
   .catch(err => {
     res.status(400).json(err);
