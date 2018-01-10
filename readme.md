@@ -7,7 +7,7 @@
 
 MVP - Create, Read, Update, Delete the Time and Date for desired moon phase.  Searching for a date and time and rendering corresponding image for date and time. Styling the pages using CSS.
 
-POST-MVP - Displaying Moon rise and set times according to a location.
+POST-MVP - Displaying Moon rise and set times according to a location. Add additional bodies (i.e., jupiter, europa, mars)
 
 POST-POST-MVP - Build Spaceship and blast off into outer space.
 
