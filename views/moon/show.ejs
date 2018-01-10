@@ -14,8 +14,6 @@
 <a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
 <br />
 
-<img src="http://api.usno.navy.mil/imagery/moon.png?date=5/28/1900&time=5:13"/>
-
 <form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
   <input type="submit" value="Delete" />
 </form>

@@ -17,6 +17,10 @@ h2 {
   font-family: 'Faster One', cursive;
 }
 
+p {
+  color: purple;
+}
+
 table, th, td {
     margin: 10px;
     border: 1.5px solid #FFD700;
