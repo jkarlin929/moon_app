@@ -2,12 +2,14 @@ body {
   background-image: url("https://media.giphy.com/media/xT39DouSd9H24AgSEU/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 h1 {
   color: red;
   font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  padding: 5px;
+  margin-left: 25px;
 }
 
 h2 {
@@ -16,15 +18,44 @@ h2 {
 }
 
 table, th, td {
+    margin: 10px;
     border: 1.5px solid #FFD700;
     border-collapse: collapse;
 }
 
 th, td {
+  font-family: 'Julius Sans One', sans-serif;
   color: #ba0f0f;
-  padding: 15px;
+  padding: 20px;
+}
+
+td {
+  font-size: 20px;
 }
 
 th {
   text-align: left;
+}
+
+label {
+  font-family: 'Press Start 2P', cursive;
+  color: #0681cc;
+}
+
+img {
+  height: 500px;
+  width: 40%;
+}
+
+a {
+  font-family: 'Press Start 2P', cursive;
+}
+
+a:hover {
+  color: #FFD700;
+}
+
+#add {
+  font-size: 24px;
+  color: #b42e7f;
 }

@@ -6,17 +6,26 @@
 
 <form action="<%= `/moon/${moon.id}?_method=PUT` %>" method="POST">
   <label for="date">Edit This Date</label>
-  <input id="date" type="text" name="date" value=" <%= moon.moon_date %>" />
 
   <br />
 
-  <label for="time">Edit the Time</label>
+  <input id="date" type="text" name="date" value=" <%= moon.moon_date %>" />
+
+  <br />
+  <br />
+
+  <label for="time">Edit This Time</label>
+
+  <br />
+
   <input id="time" type="text" name="time" value="<%= moon.moon_time %>"/>
 
+  <br />
   <br />
 
   <input type="submit" value="Save changes" />
 </form>
+<br />
 
 <a href="<%= `/moon/${moon.id}` %>">Cancel</a>
 
