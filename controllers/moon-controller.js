@@ -20,12 +20,12 @@ moonController.search = (req, res) => {
   })
   .then((moon) => {
     console.log(moon)
-    res.render('moon/index', {pic: moon.data })
-    // res.json({
-    //   status: 200,
-    //   message: 'moon stuff here',
-    //   moon: moon.data
-    // })
+    // res.render('moon/index', {pic: moon.data })
+    res.json({
+      status: 200,
+      message: 'moon stuff here',
+      moon: moon.data
+    })
   }).catch((err) => {
     res.status(500).json(err)
   });
