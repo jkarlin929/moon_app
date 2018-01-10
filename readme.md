@@ -1,18 +1,22 @@
-![image of wireframe]
-(http://res.cloudinary.com/jkarlin929/image/upload/v1515444341/wireframe_project2.jpg)
-Wireframe for Project
+# MoonPhase
+![image of wireframe] (http://res.cloudinary.com/jkarlin929/image/upload/v1515444341/wireframe_project2.jpg) Wireframe for Project
 
 ![image of time matrix and E.R.D.]
->>>>>>> dev
-(http://res.cloudinary.com/jkarlin929/image/upload/v1515444380/time_matrix_project2.jpg)
-Time Matrix for Project
 
-MVP - Connecting to database, with data from API. Searching for a date and time and rendering corresponding image for date and time. Styling the page(s) using CSS.
+(http://res.cloudinary.com/jkarlin929/image/upload/v1515444380/time_matrix_project2.jpg) Time Matrix for Project
 
-POST-MVP - Displaying Moon rise and set times according to a location. 
+MVP - Create, Read, Update, Delete the Time and Date for desired moon phase.  Searching for a date and time and rendering corresponding image for date and time. Styling the pages using CSS.
 
-Functional Components:
-Component of Creating Items: High Priority, EST.Time 10hr, Time.Invested 12h, Actual.Time --.
-Component of Deleting Items: High Priority, EST.Time 5hr, Time.Invested 7hr, Actual.Time --.
-Component of Editing Items: High Priority, EST.Time 10hr, Time.Invested 11hr, Actual.Time --.
-Componenet of Getting Items: High Priority, EST.Time 5hr, Time.Invested 7hr, Actual.Time --.
+POST-MVP - Displaying Moon rise and set times according to a location.
+
+POST-POST-MVP - Build Spaceship and blast off into outer space.
+
+
+
+| Component     | Priority      | EST Time  | Time Invested | Actual Time|
+| ------------- |:-------------:| :--------:| :------------:|:----------:|
+| Create        | H             |  10hr     |     12hr      |     13hr   |
+| Get/Read      | H             |   5hr     |      7hr      |     8hr    |
+| Edit          | H             |   10hr    |     11hr      |     13hr   |
+| Delete        | H             |   5hr     |     7hr       |     7hr    |
+| CSS Styling   | H             |   8hr     |     3hr       |     N/A    |

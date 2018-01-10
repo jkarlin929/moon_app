@@ -9,11 +9,13 @@ const moonRouter = require('./routes/moon-routes');
 
 require('dotenv').config()
 
+
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+app.use(express.static('public'));
 
 app.use('/moon', moonRouter);
 

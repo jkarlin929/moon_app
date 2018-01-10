@@ -1,4 +1,5 @@
 <%# views/moon/edit.ejs %>
+<%- include ../partials/editplate %>
 
 <h1>Edit a moon</h1>
 <h2>edit.ejs</h2>
@@ -18,3 +19,5 @@
 </form>
 
 <a href="<%= `/moon/${moon.id}` %>">Cancel</a>
+
+<%- include ../partials/end %>
