@@ -27,13 +27,13 @@ Displaying Moon rise and set times according to a location. Add additional bodie
     -lunar phase
     -image URL
 
-###Deleting Items:
+### Deleting Items:
     -date
     -time
     -lunar phase
     -image URL
 
-###Getting Items:
+### Getting Items:
     -date
     -time
     -lunar phase
