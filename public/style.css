@@ -46,10 +46,21 @@ label {
   color: #0681cc;
 }
 
+#image {
+  overflow: hidden;
+  width: 50%;
+  border-radius: 50%;
+}
+
 img {
+  width: 100%;
+  transform: scale(2);
+}
+
+/*img {
   height: 500px;
   width: 40%;
-}
+}*/
 
 a {
   font-family: 'Press Start 2P', cursive;
