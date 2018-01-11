@@ -49,9 +49,9 @@ Displaying Moon rise and set times according to a location. Add additional bodie
 | Delete        | H             |   5hr     |     7hr       |     7hr    |
 | CSS Styling   | H             |   8hr     |     4hr       |     N/A    |
 | Add Moon Phase| H             |   5hr     |     N/A       |     N/A    |
-|     Info                                                               |    
+     Info                                                                 
 | Add other ima-| M             |   6hr     |     N/A       |            |
-|    ges                                                                 |
+    ges                                                                 
 
 ## Helper Functions
 | Function              |   Description                                   |
