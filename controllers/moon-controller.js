@@ -59,7 +59,8 @@ moonController.edit = (req, res) => {
 moonController.update = (req, res) => {
   Moon.update({
       date: req.body.date,
-      time: req.body.time
+      time: req.body.time,
+      imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)
@@ -83,7 +84,8 @@ moonController.create = (req, res) => {
   Moon.create({
     date: req.body.date,
     time: req.body.time,
-    imageurl: req.body.imageurl
+    // imageurl: req.body.imageurl
+    imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)

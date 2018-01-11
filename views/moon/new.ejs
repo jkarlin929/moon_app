@@ -18,7 +18,7 @@
   <br />
 
   <label for="imageurl">ImageURL: </label>
-  <input id="imageurl" type="url" name="imageurl" style="width: 390px;" value="http://api.usno.navy.mil/imagery/moon.png?date=DATE&time=TIME" />
+  <input id="imageurl" type="url" name="imageurl" style="width: 400px;" value="<%= `http://api.usno.navy.mil/imagery/moon.png?date=${moon.moon_date}&time=${moon.moon_time}` %>" />
 
   <p>Attention Stargazers, to render an image, where it says DATE (between the '=' '&') enter the date in MM/DD/YYYY format. Where it says TIME (between the '=' and ending ") enter the time in HH:MM format, so if the time is 4 pm, enter 04:00 PM.</p>
 
