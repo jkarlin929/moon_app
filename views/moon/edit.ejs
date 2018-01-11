@@ -18,14 +18,10 @@
 
   <br />
 
-  <input id="time" type="text" name="time" value="<%= moon.moon_time %>"/>
+  <input id="time" type="text" name="time" value="<%=moon.moon_time %>"/>
 
   <br />
   <br />
-
-  <label for="imageurl">ImageURL: </label>
-  <input id="imageurl" type="url" name="imageurl" style="width: 400px;" value="<%= `http://api.usno.navy.mil/imagery/moon.png?date=${moon.moon_date}&time=${moon.moon_time}` %>" />
-
   <br />
 
   <input type="submit" value="Save changes" />
