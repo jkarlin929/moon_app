@@ -53,10 +53,10 @@ Displaying Moon rise and set times according to a location. Add additional bodie
 | Add other ima-| M             |   6hr     |     N/A       |            |
 |    ges        |               |           |               |            |
 
-##Helper Functions
+## Helper Functions
 | Function              |   Description                                   |
-| --------------------- |:-----------------------------------------------:|
+|:---------------------:|:-----------------------------------------------:|
 | style="width: 390px;" | Styles input box to make it longer to view input|
 
-##Issues and Resolutions
+## Issues and Resolutions
 The API returns a BLOB, when retrieving the image using axios. Currently, using the ability to create and edit the image url, linking it to the proper image from the API.
