@@ -15,10 +15,11 @@ Moon.update = (moon, id) => {
   return db.none(
       `UPDATE moonphase SET
       moon_date = $1,
-      moon_time = $2
-      WHERE id = $3
+      moon_time = $2,
+      imageurl = $3
+      WHERE id = $4
       `,
-      [moon.date, moon.time, id]
+      [moon.date, moon.time, moon.imageurl, id]
     );
 };
 
