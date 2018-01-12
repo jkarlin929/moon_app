@@ -1,6 +1,6 @@
 
-CREATE TABLE IF NOT EXISTS moonphasedata (
-  moonphasedata_id BIGSERIAL PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS moonphasedata(
+  id BIGSERIAL PRIMARY KEY NOT NULL,
   moonrise VARCHAR(255),
   moonset VARCHAR(255),
   closestphase VARCHAR(255),
