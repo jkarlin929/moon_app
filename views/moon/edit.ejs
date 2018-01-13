@@ -28,6 +28,17 @@
 </form>
 <br />
 
+<label for="body_id">Planety Body: </label>
+<select id="body_id" name="body_id">
+  <% bodyinfo.forEach(body => { %>
+    <option
+      value="<%= body.id %>"
+      selected="<% moon.body_id == body.id %>">
+      <%= `${body.bodies} ${body.description}` %>
+    </option>
+    <% }) %>
+</select>
+
 <a href="<%= `/moon/${moon.id}` %>">Cancel</a>
 
 <%- include ../partials/end %>

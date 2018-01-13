@@ -56,20 +56,28 @@ moonController.show = (req, res) => {
 moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
-      res.render('moon/edit', {
-        moon: moon,
-      })
-    })
+      Body.findAll()
+        .then(bodyinfo => {
+          res.render('moon/edit', {
+            moon: moon, bodyinfo: bodyinfo
+          })
+        })
     .catch(err => {
       res.status(400).json(err);
     });
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
 };
+
 //part of .edit
 moonController.update = (req, res) => {
   Moon.update({
       date: req.body.date,
       time: req.body.time,
-      imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
+      body_id: parseInt(req.body.body_id),
+      imageurl: `http://api.usno.navy.mil/imagery/${req.body.body}.png?date=${req.body.date}&time=${req.body.time}`
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)

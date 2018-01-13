@@ -23,9 +23,9 @@
 
 <label for="body_id">Planety Body:</label>
 <select id="body_id" name="body_id">
-  <% bodyinfo.forEach(bodyinfo => { %>
+  <% bodyinfo.forEach(body => { %>
     <option value="<% bodyinfo.id %>">
-      <%= `${body.bodies} ${body.description}` $>
+      <%= `${body.bodies} ${body.description}` %>
     </option>
   <% }) %>
 </select>

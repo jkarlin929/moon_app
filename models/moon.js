@@ -16,10 +16,11 @@ Moon.update = (moon, id) => {
       `UPDATE moonphase SET
       moon_date = $1,
       moon_time = $2,
-      imageurl = $3
-      WHERE id = $4
+      imageurl = $3,
+      body_id = $4
+      WHERE id = $5
       `,
-      [moon.date, moon.time, moon.imageurl, id]
+      [moon.date, moon.time, moon.imageurl, moon.body_id, id]
     );
 };
 
