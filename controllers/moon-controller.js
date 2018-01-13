@@ -86,7 +86,8 @@ moonController.create = (req, res) => {
     date: req.body.date,
     time: req.body.time,
     // imageurl: req.body.imageurl
-    imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
+    imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`,
+    moonphasedata_id: req.body.moonphasedata_id
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)
