@@ -3,7 +3,7 @@ const db = require('../db/config');
 const Moon = {};
 
 Moon.findAll = () => {
-  return db.query('SELECT * FROM moonphase');
+  return db.query('SELECT * FROM moonphasedata JOIN moonphase ON moonphase.moonphasedata_id = moonphasedata.moonphasedata_id');
 };
 
 Moon.findById = id => {
@@ -24,7 +24,7 @@ Moon.update = (moon, id) => {
 };
 
 Moon.create = moon => {
-  console.log("this is Moon.create: ", moon.date)
+  // console.log("this is Moon.create: ", moon.date)
   return db.one(
     `
     INSERT INTO moonphase
