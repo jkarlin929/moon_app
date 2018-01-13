@@ -1,3 +1,11 @@
-
-INSERT INTO moonphasedata (moonrise, moonset, closestphase, closestphasedate, closestphasetime, fracillum, currentphase) VALUES
-('2:00 am', '5:03 pm', 'Last Quarter', 'September 25, 1986', '11:17 pm', '18%', 'Waning Crescent');
+INSERT INTO body (bodies, description) VALUES
+('mercury', 'first planet from the sun'),
+('venus', 'second planet from the sun'),
+('venus-radar', 'radar image of second planet from the sun'),
+('mars', 'fourth planet from the sun'),
+('jupiter', 'fifth planet from the sun'),
+('moon', 'earths moon aka luna'),
+('io', 'jupiters fourth largest moon with a lot of volcanic activity'),
+('europa', 'smallest of the four Galilean moons of jupiter'),
+('ganymede', 'jupiters largest moon'),
+('callisto', 'jupiters second largest moon');

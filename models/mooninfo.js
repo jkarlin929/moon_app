@@ -1,14 +1,14 @@
 const db = require('../db/config');
 
-const MoonInfo = {};
+const Body = {};
 
-MoonInfo.findAll = () => {
-  return db.query('SELECT * FROM moonphasedata');
+Body.findAll = () => {
+  return db.query('SELECT * FROM body');
 }
 
-MoonInfo.findById = (id) => {
+Body.findById = (id) => {
   return db.oneOrNone(
-    'SELECT * FROM moonphasedata WHERE id = $1', id);
+    'SELECT * FROM body WHERE id = $1', id);
 }
 
-module.exports = MoonInfo;
+module.exports = Body;

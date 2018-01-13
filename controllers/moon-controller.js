@@ -1,7 +1,7 @@
 const Moon = require('../models/moon');
 const axios = require('axios');
 const moonController = {};
-const MoonInfo = require('../models/mooninfo.js');
+const Body = require('../models/mooninfo.js');
 
 moonController.index = (req, res) => {
   Moon.findAll()
@@ -35,11 +35,11 @@ moonController.search = (req, res) => {
 moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
-     console.log(moon)
+     console.log(moon.moonphasedata)
     if (moon.moonphasedata_id) {
-        MoonInfo.findById(moon.moonphasedata_id)
+        Body.findById(moon.moonphasedata_id)
           .then(mooninfo => {
-            res.render('movies/show', { moon: moon, mooninfo: mooninfo })
+            res.render('moon/show', { moon: moon, mooninfo: mooninfo })
           })
           .catch(err => {
             res.status(400).json(err);
@@ -80,7 +80,7 @@ moonController.update = (req, res) => {
 };
 //part of .create
 moonController.new = (req, res) => {
-  MoonInfo.findAll()
+  Body.findAll()
   .then(mooninfo => {
     res.render('moon/new', {mooninfo: mooninfo})
   })
@@ -94,8 +94,7 @@ moonController.create = (req, res) => {
     date: req.body.date,
     time: req.body.time,
     // imageurl: req.body.imageurl
-    imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`,
-    moonphasedata_id: req.body.moonphasedata_id
+    imageurl: `http://api.usno.navy.mil/imagery/moon.png?date=${req.body.date}&time=${req.body.time}`
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)
