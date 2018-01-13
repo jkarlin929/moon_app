@@ -1,6 +1,7 @@
 const Moon = require('../models/moon');
 const axios = require('axios');
 const moonController = {};
+const MoonInfo = require('../models/mooninfo.js');
 
 moonController.index = (req, res) => {
   Moon.findAll()
@@ -71,9 +72,9 @@ moonController.update = (req, res) => {
 };
 //part of .create
 moonController.new = (req, res) => {
-  Moon.findAll()
-  .then(moon => {
-    res.render('moon/new', {moon: moon})
+  MoonInfo.findAll()
+  .then(MoonInfo => {
+    res.render('moon/new', {mooninfo: mooninfo})
   })
   .catch(err => {
     res.status(400).json(err)
