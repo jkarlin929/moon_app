@@ -35,11 +35,22 @@ moonController.search = (req, res) => {
 moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
-    res.render('moon/show', {
-      moon: moon
+    if (moon.moonphasedata_id) {
+      MoonInfo.findById(moon.moonphasedata_id)
+      .then(mooninfo => {
+          res.render('moon/show', {
+      moon: moon, mooninfo: mooninfo
+      })
     });
+      .catch(err => {
+        res.status(400).json(err);
+      });
+    } else {
+      res.render ('moon/show', {
+        moon: moon, mooninfo: undefined
+      })
+    }
     // console.log(moon)
-  })
   .catch(err => {
     res.status(400).json(err);
   });

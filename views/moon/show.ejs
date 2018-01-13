@@ -21,4 +21,7 @@
   <input type="submit" value="Delete" />
 </form>
 
+<% if (mooninfo) { %>
+  <p> Moon Info: <%= `${moon.mooninfo}` </p>
+<% } %>
 <%- include ../partials/end %>
