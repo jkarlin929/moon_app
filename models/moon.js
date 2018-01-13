@@ -28,10 +28,10 @@ Moon.create = moon => {
   return db.one(
     `
     INSERT INTO moonphase
-    (moon_date, moon_time, imageurl)
-    VALUES ($1, $2, $3) RETURNING *
+    (moon_date, moon_time, imageurl, body_id)
+    VALUES ($1, $2, $3, $4) RETURNING *
     `,
-    [moon.date, moon.time, moon.imageurl]
+    [moon.date, moon.time, moon.imageurl, moon.body_id]
     );
 };
 

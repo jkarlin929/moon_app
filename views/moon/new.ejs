@@ -21,7 +21,14 @@
 <input type="submit" name="Create the Date!" />
 </form>
 
-
+<label for="body_id">Planety Body:</label>
+<select id="body_id" name="body_id">
+  <% bodyinfo.forEach(bodyinfo => { %>
+    <option value="<% bodyinfo.id %>">
+      <%= `${body.bodies} ${body.description}` $>
+    </option>
+  <% }) %>
+</select>
 
 <br />
 
