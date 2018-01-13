@@ -73,7 +73,7 @@ moonController.update = (req, res) => {
 //part of .create
 moonController.new = (req, res) => {
   MoonInfo.findAll()
-  .then(MoonInfo => {
+  .then(mooninfo => {
     res.render('moon/new', {mooninfo: mooninfo})
   })
   .catch(err => {
