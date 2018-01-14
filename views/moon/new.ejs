@@ -18,18 +18,19 @@
   <br />
   <br />
 
-<input type="submit" name="Create the Date!" />
-</form>
-
 <label for="body_id">Planety Body:</label>
 <select id="body_id" name="body_id">
-  <% bodyinfo.forEach(body => { %>
-    <option value="<% bodyinfo.id %>">
-      <%= `${body.bodies} ${body.description}` %>
+  <% body.forEach(body => { %>
+    <option value="<% body.id %>">
+      <%= `${body.bodies}` %>
     </option>
   <% }) %>
 </select>
-
+<br />
+<br />
+<input type="submit" name="Create the Date!" />
+<br />
+</form>
 <br />
 
 <a href="/moon">Cancel</a>

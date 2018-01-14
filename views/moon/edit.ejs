@@ -24,20 +24,22 @@
   <br />
   <br />
 
-  <input type="submit" value="Save changes" />
-</form>
-<br />
 
 <label for="body_id">Planety Body: </label>
 <select id="body_id" name="body_id">
-  <% bodyinfo.forEach(body => { %>
+  <% body.forEach(body => { %>
     <option
       value="<%= body.id %>"
       selected="<% moon.body_id == body.id %>">
-      <%= `${body.bodies} ${body.description}` %>
+      <%= `${body.bodies}` %>
     </option>
     <% }) %>
 </select>
+
+<br />
+
+  <input type="submit" value="Save changes" />
+</form>
 
 <a href="<%= `/moon/${moon.id}` %>">Cancel</a>
 

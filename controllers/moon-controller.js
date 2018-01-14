@@ -38,14 +38,14 @@ moonController.show = (req, res) => {
      console.log(moon)
     if (moon.body_id) {
         Body.findById(moon.body_id)
-          .then(bodyinfo => {
-            res.render('moon/show', { moon: moon, bodyinfo: bodyinfo })
+          .then(body => {
+            res.render('moon/show', { moon: moon, body: body })
           })
           .catch(err => {
             res.status(400).json(err);
           });
       } else {
-        res.render('moon/show', { moon: moon, bodyinfo: undefined })
+        res.render('moon/show', { moon: moon, body: undefined })
       }
     })
     .catch(err => {
@@ -57,9 +57,9 @@ moonController.edit = (req, res) => {
   Moon.findById(req.params.id)
     .then(moon => {
       Body.findAll()
-        .then(bodyinfo => {
+        .then(body => {
           res.render('moon/edit', {
-            moon: moon, bodyinfo: bodyinfo
+            moon: moon, body: body
           })
         })
     .catch(err => {
@@ -76,8 +76,8 @@ moonController.update = (req, res) => {
   Moon.update({
       date: req.body.date,
       time: req.body.time,
-      body_id: parseInt(req.body.body_id),
-      imageurl: `http://api.usno.navy.mil/imagery/${req.body.body}.png?date=${req.body.date}&time=${req.body.time}`
+      body_id: req.body.body_id,
+      imageurl: `http://api.usno.navy.mil/imagery/${req.body.body_id}.png?date=${req.body.date}&time=${req.body.time}`
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)
@@ -89,8 +89,8 @@ moonController.update = (req, res) => {
 //part of .create
 moonController.new = (req, res) => {
   Body.findAll()
-  .then(bodyinfo => {
-    res.render('moon/new', {bodyinfo: bodyinfo})
+  .then(body => {
+    res.render('moon/new', {body: body})
   })
   .catch(err => {
     res.status(400).json(err)
@@ -101,9 +101,10 @@ moonController.create = (req, res) => {
   Moon.create({
     date: req.body.date,
     time: req.body.time,
+    body_id: req.body.body_id,
     // imageurl: req.body.imageurl
-    imageurl: `http://api.usno.navy.mil/imagery/${req.body.body}.png?date=${req.body.date}&time=${req.body.time}`,
-    body_id: req.body.body_id
+    imageurl: `http://api.usno.navy.mil/imagery/${req.body.body_id}.png?date=${req.body.date}&time=${req.body.time}`
+
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)

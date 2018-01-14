@@ -1,8 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS body (
   id BIGSERIAL PRIMARY KEY NOT NULL,
-  bodies VARCHAR(255),
-  description VARCHAR(255)
+  bodies VARCHAR(255)
 );
 
 ALTER TABLE moonphase ADD COLUMN body_id INTEGER;
