@@ -1,0 +1,21 @@
+div {
+  position: relative;
+  top: 200px;
+  left: 670px;
+}
+
+
+a {
+  font-family: 'Monofett', cursive;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline overline;
+}

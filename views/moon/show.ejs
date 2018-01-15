@@ -1,28 +1,33 @@
 <%# views/moon/show.ejs %>
 <%- include ../partials/editplate %>
 
-<h1>Show.ejs</h1>
+<div id="media">
+  <h1>You just time traveled to</h1>
 
-<h1><%= moon.moon_date %></h1>
-<h1><%= moon.moon_time %></h1>
+  <h1><%= moon.moon_date %></h1>
 
-<div id="image">
-  <img src="<%= moon.imageurl %>">
+  <h1>at <%= moon.moon_time %>.</h1>
+
+  </div>
+  <% if (body) { %>
+    <h1> location: <%= `${body.id}` %></h1>
+  <% } %>
 </div>
 
-<br />
+  <div id="image">
+    <img src="<%= moon.imageurl %>">
+  </div>
 
-<a href="/moon">Back to index page</a>
-<br />
-<a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
-<br />
+  <br />
+<div id="footer">
+  <a href="/moon">Back to Home</a>
+  <br />
+  <a href="<%= `/moon/${moon.id}/edit` %>">Edit Details</a>
+  <br />
 
-<form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
-  <input type="submit" value="Delete" />
-</form>
+  <form action="<%= `/moon/${moon.id}?_method=DELETE` %>" method="POST">
+    <input type="submit" value="Delete" />
+  </form>
 
-<% if (body) { %>
-  <p> Planetary Info: <%= `${moon.id}` %></p>
-<% } %>
 
 <%- include ../partials/end %>

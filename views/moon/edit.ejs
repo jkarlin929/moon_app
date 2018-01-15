@@ -1,11 +1,11 @@
 <%# views/moon/edit.ejs %>
 <%- include ../partials/editplate %>
 
-<h1>Edit a moon</h1>
-<h2>edit.ejs</h2>
+<div id="media">
+<h1>Alter your timelog</h1>
 
 <form action="<%= `/moon/${moon.id}?_method=PUT` %>" method="POST">
-  <label for="date">Edit This Date</label>
+  <label for="date">Edit the Date</label>
 
   <br />
 
@@ -14,7 +14,7 @@
   <br />
   <br />
 
-  <label for="time">Edit This Time</label>
+  <label for="time">Edit the Time</label>
 
   <br />
 
@@ -25,7 +25,8 @@
   <br />
 
 
-<label for="body_id">Planety Body: </label>
+<label for="body_id">Planetary Body:</label>
+
 <select id="body_id" name="body_id">
   <% body.forEach(body => { %>
     <option
@@ -37,10 +38,10 @@
 </select>
 
 <br />
-
+<br />
   <input type="submit" value="Save changes" />
 </form>
-
+<br />
 <a href="<%= `/moon/${moon.id}` %>">Cancel</a>
-
+</div>
 <%- include ../partials/end %>

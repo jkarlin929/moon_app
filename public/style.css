@@ -5,8 +5,9 @@ body {
 }
 
 h1 {
-  color: red;
+  color: #800000;
   font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px black;
   font-size: 40px;
   padding: 5px;
   margin-left: 25px;
@@ -17,19 +18,16 @@ h2 {
   font-family: 'Faster One', cursive;
 }
 
-p {
-  color: purple;
-}
-
 table, th, td {
     margin: 10px;
-    border: 1.5px solid #FFD700;
+    border: 1.5px solid #783535;
     border-collapse: collapse;
+    margin: 15px;
 }
 
 th, td {
   font-family: 'Julius Sans One', sans-serif;
-  color: #ba0f0f;
+  color: #800000;
   padding: 20px;
 }
 
@@ -42,8 +40,8 @@ th {
 }
 
 label {
-  font-family: 'Press Start 2P', cursive;
-  color: #0681cc;
+  font-family: 'Vast Shadow', cursive;
+  color: #008080;
 }
 
 #image {
@@ -63,14 +61,68 @@ img {
 }*/
 
 a {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Julius Sans One', sans-serif;
+}
+a:visited{
+  color: #808000;
 }
 
 a:hover {
-  color: #FFD700;
+  color: #05377b;
 }
 
 #add {
   font-size: 24px;
   color: #b42e7f;
+}
+
+#add:visited{
+  color: #808000;
+}
+
+#add:hover{
+  color: #800080;
+}
+
+#description {
+  font-family: 'Vast Shadow', cursive;
+  width: 30%;
+  color: #008080;
+  margin: 15px;
+}
+
+#title {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 22px;
+  color: #800000;
+  margin: 5px;
+  padding: 15px;
+}
+
+input[type=text] {
+    width: 20%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+      background-image: none;
+      background-color: grey;
+    }
+
+    #media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
 }

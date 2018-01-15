@@ -39,6 +39,7 @@ moonController.show = (req, res) => {
     if (moon.body_id) {
         Body.findById(moon.body_id)
           .then(body => {
+            console.log(body.id)
             res.render('moon/show', { moon: moon, body: body })
           })
           .catch(err => {
@@ -102,9 +103,7 @@ moonController.create = (req, res) => {
     date: req.body.date,
     time: req.body.time,
     body_id: req.body.body_id,
-    // imageurl: req.body.imageurl
     imageurl: `http://api.usno.navy.mil/imagery/${req.body.body_id}.png?date=${req.body.date}&time=${req.body.time}`
-
   })
   .then(moon => {
     res.redirect(`moon/${moon.id}`)

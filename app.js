@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.use('/moon', moonRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello Friend');
+  res.render('home.ejs');
 });
 
 app.set('view engine', 'ejs');
