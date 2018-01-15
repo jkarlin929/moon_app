@@ -1,7 +1,8 @@
+\c moon_phase
+DROP TABLE IF EXISTS body;
 
 CREATE TABLE IF NOT EXISTS body (
   id BIGSERIAL PRIMARY KEY NOT NULL,
   bodies VARCHAR(255)
 );
 
-ALTER TABLE moonphase ADD COLUMN body_id INTEGER;

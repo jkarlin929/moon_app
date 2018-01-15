@@ -36,10 +36,10 @@ moonController.show = (req, res) => {
   Moon.findById(req.params.id)
   .then(moon => {
      console.log(moon)
-    if (moon.body_id) {
-        Body.findById(moon.body_id)
+    if (moon.id) {
+        Body.findById(moon.id)
           .then(body => {
-            console.log(body.id)
+            // console.log(body.id)
             res.render('moon/show', { moon: moon, body: body })
           })
           .catch(err => {
@@ -91,6 +91,7 @@ moonController.update = (req, res) => {
 moonController.new = (req, res) => {
   Body.findAll()
   .then(body => {
+    console.log(body)
     res.render('moon/new', {body: body})
   })
   .catch(err => {
@@ -99,14 +100,20 @@ moonController.new = (req, res) => {
 };
 
 moonController.create = (req, res) => {
+  console.log("this is req.body", req.body)
+  Body.findById(req.body.body_id)
+  .then(data => {
+    console.log("this is findById data", data.bodies)
   Moon.create({
     date: req.body.date,
     time: req.body.time,
     body_id: req.body.body_id,
-    imageurl: `http://api.usno.navy.mil/imagery/${req.body.body_id}.png?date=${req.body.date}&time=${req.body.time}`
+    bodies: data.bodies,
+    imageurl: `http://api.usno.navy.mil/imagery/${data.bodies}.png?date=${req.body.date}&time=${req.body.time}`
+    })
+    .then(moon => {
+      res.redirect(`moon/${moon.id}`)
   })
-  .then(moon => {
-    res.redirect(`moon/${moon.id}`)
   })
   .catch(err => {
     res.status(400).json(err);

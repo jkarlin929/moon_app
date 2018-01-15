@@ -8,9 +8,10 @@
 
   <h1>at <%= moon.moon_time %>.</h1>
 
+<!--   <%# shows planetary body from second model %> -->
   </div>
   <% if (body) { %>
-    <h1> location: <%= `${body.id}` %></h1>
+    <h1> location: <%= `${body.bodies}` %></h1>
   <% } %>
 </div>
 
