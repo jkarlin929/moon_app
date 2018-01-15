@@ -30,8 +30,8 @@
 <select id="body_id" name="body_id">
   <% body.forEach(body => { %>
     <option
-      value="<%= body.bodies %>"
-      selected="<% moon.body_id == body.bodies %>">
+      value="<%= body.id %>"
+      selected="<% moon.body_id == body.id %>">
       <%= `${body.bodies}` %>
     </option>
     <% }) %>

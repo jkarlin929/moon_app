@@ -20,7 +20,7 @@ Moon.update = (moon, id) => {
       body_id = $4
       WHERE id = $5
       `,
-      [moon.date, moon.time, moon.imageurl, moon.body, id]
+      [moon.date, moon.time, moon.imageurl, moon.body_id, id]
     );
 };
 

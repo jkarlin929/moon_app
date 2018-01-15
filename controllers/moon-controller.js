@@ -33,21 +33,18 @@ moonController.index = (req, res) => {
 // };
 
 moonController.show = (req, res) => {
+  console.log("inside show")
   Moon.findById(req.params.id)
   .then(moon => {
-     console.log(moon)
-    if (moon.id) {
-        Body.findById(moon.id)
+        Body.findById(moon.body_id)
           .then(body => {
-            // console.log(body.id)
+            console.log(body)
             res.render('moon/show', { moon: moon, body: body })
           })
+          // console.log("this is show moon, body", moon, body)
           .catch(err => {
             res.status(400).json(err);
           });
-      } else {
-        res.render('moon/show', { moon: moon, body: undefined })
-      }
     })
     .catch(err => {
       res.status(400).json(err);
@@ -74,15 +71,20 @@ moonController.edit = (req, res) => {
 
 //part of .edit
 moonController.update = (req, res) => {
+  console.log("this is req.body from update", req.body)
+  Body.findById(req.body.body_id)
+  .then(body => {
   Moon.update({
       date: req.body.date,
       time: req.body.time,
       body_id: req.body.body_id,
-      imageurl: `http://api.usno.navy.mil/imagery/${req.body.body_id}.png?date=${req.body.date}&time=${req.body.time}`
+      bodies: body.bodies,
+      imageurl: `http://api.usno.navy.mil/imagery/${body.bodies}.png?date=${req.body.date}&time=${req.body.time}`
     }, req.params.id)
     .then(() => {
       res.redirect(`/moon/${req.params.id}`)
     })
+  })
     .catch(err => {
       res.status(400).json(err);
     });
