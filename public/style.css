@@ -23,6 +23,7 @@ table, th, td {
     border: 1.5px solid #783535;
     border-collapse: collapse;
     margin: 15px;
+    text-shadow: 2px 1px black;
 }
 
 th, td {
@@ -72,8 +73,9 @@ a:hover {
 }
 
 #add {
-  font-size: 24px;
+  font-size: 28px;
   color: #b42e7f;
+  text-shadow: 2px 2px black;
 }
 
 #add:visited{
@@ -87,6 +89,7 @@ a:hover {
 #description {
   font-family: 'Vast Shadow', cursive;
   width: 30%;
+  text-shadow: 2px 2px black;
   color: #008080;
   margin: 15px;
 }
@@ -94,6 +97,7 @@ a:hover {
 #title {
   font-family: 'Bungee Inline', cursive;
   font-size: 22px;
+  text-shadow: 2px 2px black;
   color: #800000;
   margin: 5px;
   padding: 15px;
