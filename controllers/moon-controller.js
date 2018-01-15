@@ -102,14 +102,14 @@ moonController.new = (req, res) => {
 moonController.create = (req, res) => {
   console.log("this is req.body", req.body)
   Body.findById(req.body.body_id)
-  .then(data => {
-    console.log("this is findById data", data.bodies)
+  .then(body => {
+    // console.log("this is findById data", body.bodies)
   Moon.create({
     date: req.body.date,
     time: req.body.time,
     body_id: req.body.body_id,
-    bodies: data.bodies,
-    imageurl: `http://api.usno.navy.mil/imagery/${data.bodies}.png?date=${req.body.date}&time=${req.body.time}`
+    bodies: body.bodies,
+    imageurl: `http://api.usno.navy.mil/imagery/${body.bodies}.png?date=${req.body.date}&time=${req.body.time}`
     })
     .then(moon => {
       res.redirect(`moon/${moon.id}`)
