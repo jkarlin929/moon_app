@@ -9,7 +9,7 @@ moonRouter.get('/:id/edit', moonController.edit);
 moonRouter.put('/:id', moonController.update);
 
 moonRouter.post('/', moonController.create);
-moonRouter.post('/search', moonController.search);
+// moonRouter.post('/search', moonController.search);
 moonRouter.delete('/:id', moonController.destroy);
 
 module.exports = moonRouter;

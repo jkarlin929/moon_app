@@ -45,12 +45,6 @@ label {
   color: #008080;
 }
 
-#image {
-  overflow: hidden;
-  width: 50%;
-  border-radius: 50%;
-}
-
 img {
   width: 100%;
   transform: scale(2);
@@ -78,19 +72,26 @@ a:hover {
   text-shadow: 2px 2px black;
 }
 
+#image {
+  overflow: hidden;
+  width: 50%;
+  border-radius: 50%;
+}
+
 #add:visited{
   color: #808000;
 }
 
 #add:hover{
-  color: #800080;
+  color: #05377b;
 }
 
 #description {
   font-family: 'Vast Shadow', cursive;
   width: 30%;
   text-shadow: 2px 2px black;
-  color: #008080;
+  color: #a0a9cc;
+  font-size: 18px;
   margin: 15px;
 }
 

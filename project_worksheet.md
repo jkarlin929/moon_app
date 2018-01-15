@@ -47,8 +47,8 @@ Displaying Moon rise and set times according to a location. Add additional bodie
 | Get/Read      | H             |   5hr     |      7hr      |     9hr    |
 | Edit          | H             |   10hr    |     11hr      |     13hr   |
 | Delete        | H             |   5hr     |     7hr       |     7hr    |
-| CSS Styling   | H             |   8hr     |     4hr       |     N/A    |
-| Add Moon Phase| H             |   5hr     |     N/A       |     N/A    |
+| CSS Styling   | H             |   8hr     |     8hr       |     8hr    |
+| Add Moon Phase| H             |   5hr     |     8hr       |     8hr    |
 |     Info                                                               |    
 | Add other ima-| M             |   6hr     |     N/A       |            |
 |    ges                                                                 |
@@ -60,3 +60,7 @@ Displaying Moon rise and set times according to a location. Add additional bodie
 
 ## Issues and Resolutions
 The API returns a BLOB, when retrieving the image using axios. Currently, using the ability to create and edit the image url, linking it to the proper image from the API.
+
+When adding other info for the moon phase I encountered several errors and decided on a different route, to add other images by creating a body table with all the planetary bodies to choose from.
+
+When trying to create a new image with multiple images to choose from I received this error: "code": "22P02". The documentation is psql says it is an INVALID TEXT REPRESENTATION error.

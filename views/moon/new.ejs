@@ -22,7 +22,7 @@
 <label for="body_id">Planety Body:</label>
 <select id="body_id" name="body_id">
   <% body.forEach(body => { %>
-    <option value="<% body.id %>">
+    <option value="<% body.bodies %>">
       <%= `${body.bodies}` %>
     </option>
   <% }) %>

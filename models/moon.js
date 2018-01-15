@@ -3,7 +3,7 @@ const db = require('../db/config');
 const Moon = {};
 
 Moon.findAll = () => {
-  return db.query('SELECT * FROM moonphase');
+  return db.query('SELECT * FROM moonphase FULL JOIN body ON moonphase.body_id=body.id;');
 };
 
 Moon.findById = id => {
