@@ -47,7 +47,7 @@ label {
 
 img {
   width: 100%;
-  transform: scale(1.65);
+  transform: scale(1.58);
 }
 
 /*img {
@@ -73,7 +73,7 @@ a:hover {
 }
 
 #image {
-  background-color: grey;
+  /*background-color: grey;*/
   overflow: hidden;
   width: 50%;
   border-radius: 50%;

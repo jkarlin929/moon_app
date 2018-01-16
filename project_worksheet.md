@@ -64,3 +64,5 @@ The API returns a BLOB, when retrieving the image using axios. Currently, using 
 When adding other info for the moon phase I encountered several errors and decided on a different route, to add other images by creating a body table with all the planetary bodies to choose from.
 
 When trying to create a new image with multiple images to choose from I received this error: "code": "22P02". The documentation is psql says it is an INVALID TEXT REPRESENTATION error.
+
+When testing the image for different dates, I discovered, some images were cut off from the div. To fix this problem, I chose the largest planetary body (Jupiter) and the date to which is was closest to Earth (9/20/2010) and chose that to scale my image to using transform() in css. This way, as least every other planetary object would be completely visible.
