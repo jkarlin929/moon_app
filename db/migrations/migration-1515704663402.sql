@@ -1,4 +1,4 @@
-\c moon_phase
+
 DROP TABLE IF EXISTS body;
 
 CREATE TABLE IF NOT EXISTS body (
