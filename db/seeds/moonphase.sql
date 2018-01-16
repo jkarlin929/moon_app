@@ -1,4 +1,4 @@
-\c moon_phase
+
 
 INSERT INTO body (bodies) VALUES
 ('mercury'),

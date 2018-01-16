@@ -1,4 +1,5 @@
 
+
 DROP TABLE IF EXISTS moonphase;
 
 CREATE TABLE IF NOT EXISTS moonphase (
