@@ -10,6 +10,7 @@ This project will allow a user to enter a date and a time and receive an image o
 
 ## Code Snippet
 [Code Snippet](http://res.cloudinary.com/jkarlin929/image/upload/v1516065868/codesnippet_keyuqt.png)
+I am proud of this code snippet because it was how we got image to be rendered. Turned out to be a lot less complex than planned.
 
 ## MVP
 Create, Read, Update, Delete the Time and Date for desired moon phase.  Searching for a date and time and rendering corresponding image for date and time and date, along with multiple images. Styling the pages using CSS.
